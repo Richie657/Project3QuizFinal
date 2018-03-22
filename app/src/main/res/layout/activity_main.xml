@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#5573b4">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="#c4d4ff"
+        tools:context="com.example.android.project3quiz.MainActivity">
+
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/logo"
+            android:scaleType="centerCrop"
+            android:layout_gravity="center_vertical"/>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/_1_please_enter_name"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="8dp"
+            android:textColor="@android:color/black"/>
+
+        <EditText
+            android:id="@+id/Answer1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:layout_marginLeft="8dp"
+            android:hint="@string/name"/>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/_2_what_is_the_meaning_to_life_the_universe_and_everything"
+            android:textSize="15sp"
+            android:layout_marginTop="16dp"
+            android:textStyle="bold"
+            android:layout_marginLeft="8dp"
+            android:textColor="@android:color/black"/>
+
+        <RadioGroup
+            android:id="@+id/Answer2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="16dp">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/a_guide_for_hitchhikers" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/_42" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/marvin" />
+        </RadioGroup>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/_3_f_x_walks_into_a_bar_the_barmen_says"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:layout_marginLeft="8dp"
+            android:textColor="@android:color/black"
+            android:layout_marginTop="16dp"/>
+
+        <RadioGroup
+            android:id="@+id/Answer3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="16dp">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/why_the_long_face" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/i_think_my_numbers_up" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/we_don_t_do_functions" />
+        </RadioGroup>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/_4_why_can_t_you_trust_atoms"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:layout_marginLeft="8dp"
+            android:textColor="@android:color/black"
+            android:layout_marginTop="16dp"/>
+
+        <RadioGroup
+            android:id="@+id/Answer4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="16dp">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/should_you_really_trust_anyone" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/prof_hawking_said_so" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/they_make_up_everything" />
+        </RadioGroup>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/_5_what_do_you_think_of_udacity"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:layout_marginLeft="8dp"
+            android:textColor="@android:color/black"
+            android:layout_marginTop="16dp"/>
+
+        <CheckBox
+            android:id="@+id/CheckBoxAns1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/great"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="16dp"/>
+
+        <CheckBox
+            android:id="@+id/CheckBoxAns2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:text="@string/brilliant" />
+
+        <CheckBox
+            android:id="@+id/CheckBoxAns3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:text="@string/not_as_good_as_udemy" />
+
+        <CheckBox
+            android:id="@+id/CheckBoxAns4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="@string/not_very_good" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/_6_two_trains_travel_in_different_directions_for_10_mins_each_train_has_a_velocity_of_90mph_wind_speed_is_5knots_nw_find_x"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:textColor="@android:color/black"
+            android:layout_marginTop="16dp"/>
+
+        <RadioGroup
+            android:id="@+id/Answer5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="16dp">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/i_don_t_have_a_map" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/x_shh_i_m_hiding" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/i_took_the_replacement_bus_service" />
+        </RadioGroup>
+
+
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5sp"
+            android:id="@+id/submitButton"
+            android:background="@color/colorPrimary"
+            android:onClick="submitAnswers"
+            android:text="@string/submit_not_in_a_50_shades_way"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:layout_marginTop="16dp"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="16dp"
+            android:background="@android:color/black" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/and_finally"
+            android:textColor="@android:color/black"
+            android:textSize="24sp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="16dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/what_did_you_think_of_this_quiz"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="16dp"/>
+
+        <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginBottom="24dp"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:id="@+id/clear">
+
+            <RadioButton
+                android:id="@+id/Radio_Button_One"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="onRadioButtonClicked"
+                android:text="@string/like_a_broken_pencil_pointless" />
+
+            <RadioButton
+                android:id="@+id/Radio_Button_Two"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="onRadioButtonClicked"
+                android:text="@string/the_best_thing_since_unsliced_bread" />
+
+            <RadioButton
+                android:id="@+id/Radio_Button_Three"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="onRadioButtonClicked"
+                android:text="@string/i_ll_never_be_getting_this_time_back" />
+
+            <RadioButton
+                android:id="@+id/Radio_Button_Four"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="onRadioButtonClicked"
+                android:text="@string/my_life_is_complete_now" />
+
+        </RadioGroup>
+
+
+
+
+
+    </LinearLayout>
+</ScrollView>
+
+
