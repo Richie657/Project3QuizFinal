@@ -23,9 +23,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-
     public void submitAnswers(View view) {
 
+        // prevent results being submitted more than once
         final Button choice1 = findViewById(R.id.submitButton);
         choice1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -37,7 +37,6 @@ public class MainActivity extends AppCompatActivity {
         //First answer result
         EditText Answer1 = findViewById(R.id.Answer1);
         String Answer1Value = Answer1.getText().toString().toUpperCase();
-
 
         //Second answer result
         RadioGroup Answer2 = findViewById(R.id.Answer2);
@@ -59,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
         int score = calculateScore(Answer1Value, Answer2Value, Answer3Value, Answer4Value, Answer5Value);
 
         //Display total score
-        displayMessage(score);
+        displayMessage(score + checkBoxScore());
         dismissKeyboard(Answer1);
     }
 
@@ -98,17 +97,33 @@ public class MainActivity extends AppCompatActivity {
 
     //Feedback for checkbox results
     public String resultsBack() {
-
-        if (isCheckBoxAnswer(R.id.CheckBoxAns1) && isCheckBoxAnswer(R.id.CheckBoxAns2) &&
-                !isCheckBoxAnswer(R.id.CheckBoxAns3) && !isCheckBoxAnswer(R.id.CheckBoxAns4)) {
-            return getString(R.string.thank_you);
-        } else if (!isCheckBoxAnswer(R.id.CheckBoxAns1) && !isCheckBoxAnswer(R.id.CheckBoxAns2) &&
-                isCheckBoxAnswer(R.id.CheckBoxAns3) && isCheckBoxAnswer(R.id.CheckBoxAns4))
+        if (!(!isCheckBoxAnswer(R.id.CheckBoxAns1) && !isCheckBoxAnswer(R.id.CheckBoxAns2) && !isCheckBoxAnswer(R.id.CheckBoxAns3) && !isCheckBoxAnswer(R.id.CheckBoxAns4))) {
+            if (isCheckBoxAnswer(R.id.CheckBoxAns1)
+                    && isCheckBoxAnswer(R.id.CheckBoxAns2)
+                    && isCheckBoxAnswer(R.id.CheckBoxAns3)
+                    && isCheckBoxAnswer(R.id.CheckBoxAns4)) {
+                return getString(R.string.thank_you);
+            } else {
+                return getString(R.string.thanks);
+            }
+        } else {
             return getString(R.string.really);
-        return null;
+        }
     }
 
-
+    // score for checkbox results
+    public int checkBoxScore() {
+        int cbScore = 0;
+        if (isCheckBoxAnswer(R.id.CheckBoxAns1) && isCheckBoxAnswer(R.id.CheckBoxAns2) && !isCheckBoxAnswer(R.id.CheckBoxAns3) && !isCheckBoxAnswer(R.id.CheckBoxAns4)) {
+            cbScore += 2;
+            return cbScore;
+        }
+        if (!isCheckBoxAnswer(R.id.CheckBoxAns1) && !isCheckBoxAnswer(R.id.CheckBoxAns2) && isCheckBoxAnswer(R.id.CheckBoxAns3) && isCheckBoxAnswer(R.id.CheckBoxAns4)) {
+            cbScore -= 2;
+            return cbScore;
+        }
+        return cbScore;
+    }
 
     //Every correct answer is 1 point. Calculates the total score
     public int calculateScore(String answer1, int selectedRadioButton2, int selectedRadioButton3, int selectedRadioButton4, int selectedRadioButton5) {
@@ -123,7 +138,6 @@ public class MainActivity extends AppCompatActivity {
         if (answer1.equals(getString(R.string.NAME)) || (answer1.equals(getString(R.string.Name))) || (answer1.equals(getString(R.string.namee)))) {
             score = increaseScore(score);
         }
-
         if (radioButtonAnswer2Text.equals(getString(R.string.fortytwo))) {
             score = increaseScore(score);
         }
@@ -131,18 +145,15 @@ public class MainActivity extends AppCompatActivity {
             score = increaseScore(score);
         }
         if (radioButtonAnswer4Text.equals(getString(R.string.They_make_up_everything))) {
-            score = increaseScore(score);
+            score = increaseScore(score);}
 
-            if (radioButtonAnswer5Text.equals(getString(R.string.Shh)))
+        if (radioButtonAnswer5Text.equals(getString(R.string.Shh))) {
                 score = increaseScore(score);
-
-        }
-
+            }
         return score;
     }
-
     public void onRadioButtonClicked(View v) {
-        //required to import the RadioButton class
+        //Imports the RadioButton class
         RadioButton rb1 = findViewById(R.id.Radio_Button_One);
         RadioButton rb2 = findViewById(R.id.Radio_Button_Two);
         RadioButton rb3 = findViewById(R.id.Radio_Button_Three);
@@ -152,7 +163,6 @@ public class MainActivity extends AppCompatActivity {
         boolean checked = ((RadioButton) v).isChecked();
 
         //now check which radio button is selected
-        //android switch statement
         switch (v.getId()) {
 
             case R.id.Radio_Button_One:
@@ -170,27 +180,17 @@ public class MainActivity extends AppCompatActivity {
 
             case R.id.Radio_Button_Two:
                 if (checked)
-                    //if button two is selected
-                    //set the checked radio button's text style bold italic
                     rb2.setTypeface(null, BOLD_ITALIC);
-                //include toast message
                 Toast.makeText(this, R.string.Stop, Toast.LENGTH_SHORT).show();
-                //set the other three radio buttons text style to default
                 rb1.setTypeface(null, NORMAL);
                 rb3.setTypeface(null, NORMAL);
                 rb4.setTypeface(null, NORMAL);
-
-
                 break;
 
             case R.id.Radio_Button_Three:
                 if (checked)
-                    //if button three is selected
-                    //set the checked radio button's text style bold italic
                     rb3.setTypeface(null, BOLD_ITALIC);
-                // include toast message
                 Toast.makeText(this, R.string.When_was, Toast.LENGTH_SHORT).show();
-                //set the other three radio buttons text style to default
                 rb1.setTypeface(null, NORMAL);
                 rb2.setTypeface(null, NORMAL);
                 rb4.setTypeface(null, NORMAL);
@@ -198,20 +198,14 @@ public class MainActivity extends AppCompatActivity {
 
             case R.id.Radio_Button_Four:
                 if (checked)
-                    //if button four is selected
-                    //set the checked radio button's text style bold italic
                     rb4.setTypeface(null, BOLD_ITALIC);
-                //include toast
                 Toast.makeText(this, R.string.May_i, Toast.LENGTH_SHORT).show();
-                //set the other two radio buttons text style to default
                 rb1.setTypeface(null, NORMAL);
                 rb2.setTypeface(null, NORMAL);
                 rb3.setTypeface(null, NORMAL);
                 break;
         }
     }
-
-
     //increase the total score
     private int increaseScore(int score) {
         score++;
