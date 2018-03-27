@@ -39,7 +39,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/smalMargin"
-            android:hint="@string/name"
+            android:hint="@string/entertext"
             android:inputType="text" />
 
 
@@ -150,7 +150,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/smalMargin"
             android:layout_marginTop="@dimen/margin"
-            android:text="@string/_5_what_do_you_think_of_udacity"
+            android:text="@string/_5_select_two_positive_words"
             android:textColor="@android:color/black"
             android:textSize="@dimen/textSize"
             android:textStyle="bold" />
@@ -175,7 +175,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/smalMargin"
-            android:text="@string/not_as_good_as_udemy" />
+            android:text="@string/discombobulated" />
 
         <CheckBox
             android:id="@+id/CheckBoxAns4"
@@ -183,7 +183,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/smalMargin"
             android:layout_marginLeft="@dimen/smalMargin"
-            android:text="@string/not_very_good" />
+            android:text="@string/bewildered" />
 
         <TextView
             android:layout_width="match_parent"

@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
 
         //First answer result
         EditText Answer1 = findViewById(R.id.Answer1);
-        String Answer1Value = Answer1.getText().toString().toUpperCase();
+        String Answer1Value = Answer1.getText().toString();
 
         //Second answer result
         RadioGroup Answer2 = findViewById(R.id.Answer2);
@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
     //Display on screen
     public void displayMessage(int message) {
         String message1 = String.valueOf(message);
-        message1 = getString(R.string.your_score_is) + "\n" + message1 + "\n" + resultsBack();
+        message1 = getString(R.string.your_score_is) + "\n" + message1;
         Toast toast = Toast.makeText(this, message1, Toast.LENGTH_LONG);
         toast.show();
     }
@@ -93,22 +93,6 @@ public class MainActivity extends AppCompatActivity {
     public boolean isCheckBoxAnswer(int resourceID) {
         CheckBox checkbox = findViewById(resourceID);
         return checkbox.isChecked();
-    }
-
-    //Feedback for checkbox results
-    public String resultsBack() {
-        if (!(!isCheckBoxAnswer(R.id.CheckBoxAns1) && !isCheckBoxAnswer(R.id.CheckBoxAns2) && !isCheckBoxAnswer(R.id.CheckBoxAns3) && !isCheckBoxAnswer(R.id.CheckBoxAns4))) {
-            if (isCheckBoxAnswer(R.id.CheckBoxAns1)
-                    && isCheckBoxAnswer(R.id.CheckBoxAns2)
-                    && isCheckBoxAnswer(R.id.CheckBoxAns3)
-                    && isCheckBoxAnswer(R.id.CheckBoxAns4)) {
-                return getString(R.string.thank_you);
-            } else {
-                return getString(R.string.thanks);
-            }
-        } else {
-            return getString(R.string.really);
-        }
     }
 
     // score for checkbox results
@@ -135,7 +119,8 @@ public class MainActivity extends AppCompatActivity {
 
         int score = 0;
         answer1 = answer1.trim();
-        if (answer1.equals(getString(R.string.NAME)) || (answer1.equals(getString(R.string.Name))) || (answer1.equals(getString(R.string.namee)))) {
+        if (answer1.equals(getString(R.string.whosThere)) || (answer1.equals(getString(R.string.whosThere_)) ||
+                (answer1.equals(getString(R.string.whosThere2)) || (answer1.equals(getString(R.string.whosThere3)))))) {
             score = increaseScore(score);
         }
         if (radioButtonAnswer2Text.equals(getString(R.string.fortytwo))) {
@@ -145,13 +130,15 @@ public class MainActivity extends AppCompatActivity {
             score = increaseScore(score);
         }
         if (radioButtonAnswer4Text.equals(getString(R.string.They_make_up_everything))) {
-            score = increaseScore(score);}
+            score = increaseScore(score);
+        }
 
         if (radioButtonAnswer5Text.equals(getString(R.string.Shh))) {
-                score = increaseScore(score);
-            }
+            score = increaseScore(score);
+        }
         return score;
     }
+
     public void onRadioButtonClicked(View v) {
         //Imports the RadioButton class
         RadioButton rb1 = findViewById(R.id.Radio_Button_One);
@@ -206,6 +193,7 @@ public class MainActivity extends AppCompatActivity {
                 break;
         }
     }
+
     //increase the total score
     private int increaseScore(int score) {
         score++;

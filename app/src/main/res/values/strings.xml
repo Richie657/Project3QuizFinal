@@ -1,6 +1,10 @@
 <resources>
     <string name="app_name">Project3Quiz</string>
-    <string name="_1_please_enter_name">1. Please enter Name</string>
+    <string name="_1_please_enter_name">1. If I say knock knock, you say...</string>
+    <string name="whosThere">Whos there</string>
+    <string name="whosThere2">whos there</string>
+    <string name="whosThere3">who\'s there</string>
+    <string name="whosThere_">Who\'s there</string>
     <string name="name">Name</string>
     <string name="_2_what_is_the_meaning_to_life_the_universe_and_everything">2. What is the meaning to life, the universe and everything?</string>
     <string name="a_guide_for_hitchhikers">A guide for HitchHikers</string>
@@ -59,4 +63,8 @@
     <string name="not_as_good_as_udemy">Not as good as Udemy</string>
     <string name="not_very_good">Not very good</string>
     <string name="your_score_is_" />
+    <string name="entertext">Enter text here</string>
+    <string name="_5_select_two_positive_words">5. Select two positive words</string>
+    <string name="discombobulated">Discombobulated</string>
+    <string name="bewildered">bewildered</string>
 </resources>
